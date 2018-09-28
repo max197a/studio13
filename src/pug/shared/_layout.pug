@@ -1,0 +1,18 @@
+include _mixins
+doctype html
+html(lang="en")
+  head
+    include _head
+
+  body(class=bodyClass)
+    // what should be changed with every pjax
+
+    block header
+    include ../components/_preloader
+    .page(class=outClass)
+      include ../components/_header
+      .page__content
+        block content
+        
+    block scripts
+      include _scripts

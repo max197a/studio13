@@ -1,0 +1,162 @@
+.projects
+  &__grid
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: relative
+    z-index: 2
+    width: calc(100% + 32px)
+    margin: 0 -16px
+  &__item
+    width: calc(25% - 40px)
+    margin: 0 10px
+    img
+      width: 100%
+      height: 100%
+  &__top
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    position: relative
+    z-index: 1
+    padding-left: 100px
+    margin-bottom: 40px
+
+  &__info
+    margin-top: -25px
+    padding: 120px 35px 87px
+    min-width: 380px
+    background: url(../img/bg-firstscreen.jpg) center center no-repeat
+    background-size: cover
+    text-align: center
+    position: relative
+    z-index: 2
+    margin-right: -30px
+    margin-left: -70px
+    &:after
+      position: absolute
+      z-index: -1
+      display: block
+      content: ''
+      width: 22px
+      height: 22px
+      background: url(../img/bg-firstscreen.jpg) center center no-repeat
+      background-size: 200%
+      overflow: hidden
+      left: -11px
+      top: 62%
+      transform: rotate(135deg)
+    h2
+      font-size: 46px
+    p
+      font-size: 16px
+      line-height: 1.5
+      margin-top: 0px
+      padding-top: 5px
+  .pr-carousel
+    width: 100%
+    max-width: 100%
+  &__top
+    &--reverse
+      flex-direction: row-reverse
+      padding-left: 0px
+      .projects__info
+        background-color: $colorRed
+        background-image: url(../img/lines.png)
+        background-size: cover
+        background-position: left top
+        margin-right: -72px
+        margin-left: 0px
+        &:after
+          left: auto
+          right: -11px
+          background: $colorRed !important
+        h2
+          color: #fff
+      .projects__carousel
+        margin-right: 103px
+        img
+          margin: 0 auto
+        .slick-dots
+          left: auto
+          right: 100%
+          padding: 0
+          padding-right: 40px
+          flex-direction: row-reverse
+          &:before
+            right: auto
+            left: 0
+  &__carousel
+    position: relative
+    z-index: 1
+    margin-top: 87px
+    max-width: 730px
+    width: 100%
+    .item
+      width: 100%
+      min-height: 354px
+      position: relative
+      img
+        min-width: 730px
+        width: 100%
+        height: auto
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+    .slick-list
+      position: relative
+      z-index: 12
+    .slick-dots
+      position: absolute
+      left: 100%
+      bottom: 14px
+      width: 100%
+      display: flex
+      justify-content: flex-start
+      max-width: 170px
+      &:before
+        position: absolute
+        display: block
+        content: ''
+        width: 200px
+        height: 1px
+        background: $colorRed
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 1
+        transition: all 0.35s ease-in-out
+      li
+        border: none
+        background: $colorGray
+        padding: 20px 15px
+        position: relative
+        font-size: 0
+        color: transparent
+        border: 1px solid $colorGray
+        border-radius: 50%
+        cursor: pointer
+        transition: all 0.35s ease-in-out
+        z-index: 2
+        margin: 0
+        button
+          font-size: 0
+          color: transparent
+          border: none
+          background: rgba($colorRed, 0.5)
+          position: absolute
+          left: 50%
+          top: 50%
+          transform: translate(-50%, -50%)
+          width: 4px
+          height: 4px
+          display: inline-block
+          content: ''
+          border-radius: 50%
+          padding: 0
+          cursor: pointer
+        &.slick-active
+          padding: 20px
+          border-color: $colorRed
+          z-index: 3

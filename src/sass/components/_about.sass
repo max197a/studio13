@@ -1,0 +1,70 @@
+.about
+  padding: 169px 0 0
+  &__coffee
+    position: absolute
+    top: -206px
+    left: -76px
+    max-width: 360px
+    width: 25%
+  &__info
+    max-width: 58%
+  &__grid
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+  &__block
+    width: 31%
+    margin-top: -127px
+    position: relative
+    min-height: 743px
+    max-height: 743px
+    background: $colorRed
+    background-image: url(../img/lines.png)
+    background-size: contain
+    background-position: left top
+    background-repeat: repeat
+    margin-bottom: -23px
+    &::after
+      display: block
+      position: absolute
+      content: ''
+      height: 100%
+      width: 9000px
+      left: 100%
+      top: 0
+      background: $colorRed
+      background-image: url(../img/lines.png)
+      background-size: 5%
+      background-position: left top
+      background-repeat: repeat
+      z-index: 0
+    img
+      position: relative
+      z-index: 2
+  &__note
+    position: absolute
+    top: -252px
+    right: 7px
+    max-width: 680px
+    width: 43%
+    z-index: 3
+  
+  h2
+    padding-left: 92px
+    margin-bottom: 50px
+    position: relative
+    display: inline-block
+    &:after
+      width: 500px
+      height: 1px
+      position: absolute
+      display: block
+      content: ''
+      left: 110%
+      top: 50%
+      transform: translateY(-50%)
+
+  p
+    padding-top: 13px
+    padding-left: 92px
+    line-height: 1.7

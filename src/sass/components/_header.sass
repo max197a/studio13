@@ -1,0 +1,88 @@
+.header
+  position: fixed
+  width: 100%
+  left: 50%
+  transform: translateX(-50%)
+  top: 0
+  z-index: 1000
+  &__logo
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 54px 44px 47px 44px
+    outline: 1px solid red
+    background-color: $colorRed
+    background-image: url(../img/lines.png)
+    background-size: cover
+    background-position: left top
+    overflow: hidden
+    max-width: 247px
+    margin-left: -29px
+    border: none
+    outline: none
+    img
+      width: 160px
+      height: 25px
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &.is-fixed
+    .header__info
+      &::before
+        top: -37px
+  &__info
+    // margin-left: auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+    z-index: 2
+    &::before
+      display: block
+      position: absolute
+      content: ''
+      width: 100%
+      height: 100%
+      padding: 36px 35px 37px
+      background-color: $colorGray
+      background-image: url(../img/lines.png)
+      background-size: 50%
+      background-position: left top
+      z-index: -1
+      right: -35px
+      top: -236px
+      transition: all 0.35s ease-in-out
+  &__column
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+    margin-right: 20px
+    min-width: 180px
+    a
+      font-size: 20px
+      color: $colorWhite
+      letter-spacing: 1px
+    i
+      font-size: 13px
+      color: #a5a5a5
+      margin-top: 2px
+  &__btn
+    display: flex
+    align-items: center
+    justify-content: center
+    flex: 0 1 254px
+    min-width: 249px
+    width: 100%
+    border: 2px solid $colorRed
+    background-color: $colorGray
+    background-image: url(../img/lines.png)
+    background-size: cover
+    background-position: left top
+    overflow: hidden
+    transition: all 0.25s ease-in-out
+    font-size: 20px
+    padding: 13px 16px
+    &:hover
+      background-color: $colorRed

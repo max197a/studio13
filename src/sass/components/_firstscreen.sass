@@ -1,0 +1,100 @@
+.firstscreen
+  padding-top: 126px
+  padding-bottom: 320px
+  background: url(../img/bg-firstscreen.jpg) center center no-repeat
+  background-size: cover 
+  position: relative
+  z-index: 2
+  margin-bottom: 195px
+  .container
+    padding-top: 98px
+    overflow: visible
+  &__grid
+    display: flex
+    align-items: flex-start
+  &__block
+    background: $colorRed
+    background-image: url(../img/lines.png)
+    background-size: contain
+    background-position: left top
+    background-repeat: repeat
+    width: 31.5%
+    height: 100%
+    min-height: 1065px
+    display: block
+    margin-top: -195px
+    margin-bottom: -620px
+    margin-left: auto
+    position: relative
+    z-index: 2
+    img
+      position: absolute
+      &:nth-child(1)
+        left: -419px
+        top: 491px
+        z-index: 3
+      &:nth-child(2)
+        left: -28px
+        top: 304px
+      &:nth-child(3)
+        left: 173px
+        z-index: 2
+        bottom: -257px
+    &::after
+      display: block
+      position: absolute
+      content: ''
+      height: 100%
+      width: 9000px
+      left: 100%
+      top: 0
+      background: $colorRed
+      background-image: url(../img/lines.png)
+      background-size: 5%
+      background-position: left top
+      background-repeat: repeat
+      z-index: -1
+  &__title
+    font-size: 90px
+    color: $colorRed
+    margin: 0
+    padding: 0 0 0 88px
+    line-height: 0.9
+    max-width: 610px
+    font-family: $light
+    font-weight: 300
+    letter-spacing: 1px
+    position: relative
+    &:after
+      display: block
+      position: absolute
+      content: ''
+      width: 2px
+      height: 470px
+      left: 33px
+      bottom: 0
+      background: $colorRed 
+  &__sub-title
+    font-size: 32px
+    color: $colorWhite
+    line-height: 1.35
+    font-family: $light
+    padding-left: 88px
+    margin: 11px 0 0 0
+    letter-spacing: 0.4px
+    max-width: 500px
+    span
+      font-family: $extra
+  &__lamp
+    position: absolute
+    right: 11.5%
+    top: -141px
+    z-index: 3
+    width: 41.4%
+  &__convert
+    max-height: 797px
+    max-width: 38%
+    width: 38%
+    left: -98px
+    top: 445px
+    position: absolute

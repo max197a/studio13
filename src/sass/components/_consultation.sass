@@ -1,0 +1,77 @@
+.consultation
+  padding: 140px 0
+  background: $colorGray
+  text-align: center
+  h2
+    font-size: 46px
+    margin-bottom: 88px
+  &__grid
+    display: flex
+    justify-content: space-between
+    .input-container
+      width: 24%
+      position: relative
+      label
+        position: absolute
+        font-size: 12px
+        padding: 7px 10px
+        background: #fff
+        border: 2px solid $colorRed
+        color: $colorGray
+        left: 9%
+        top: 90%
+        transition: all 0.25s ease-in-out
+        &:after
+          display: block
+          position: absolute
+          content: ''
+          display: block
+          width: 8px
+          height: 8px
+          border: 2px solid $colorRed
+          border-left: none
+          border-bottom: none
+          left: 30px
+          top: -6px
+          transform: rotate(-45deg)
+          background: #fff
+
+      input
+        padding: 15px 25px
+        border-top: 2px solid transparent
+        font-size: 16px
+        color: #fff
+        font-family: $light
+        background: transparent
+        border: none
+        border-bottom: 2px solid #a5a5a5
+        transition: all 0.25s ease-in-out
+        &::placeholder
+          color: #a5a5a5
+          opacity: 1
+          font-style: italic
+        &:-ms-input-placeholder
+          color: #a5a5a5
+          font-style: italic
+        &::-ms-input-placeholder
+          color: #a5a5a5
+          font-style: italic
+      .btn
+        display: flex
+        align-items: center
+        justify-content: center
+        flex: 0 1 254px
+        min-width: 249px
+        width: 100%
+        border: 2px solid $colorRed
+        background-color: $colorGray
+        background-image: url(../img/lines.png)
+        background-size: cover
+        background-position: left top
+        overflow: hidden
+        transition: all 0.25s ease-in-out
+        font-size: 20px
+        padding: 11px 16px
+        cursor: pointer
+        &:hover
+          background-color: $colorRed
