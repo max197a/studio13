@@ -11,6 +11,9 @@
     .input-container
       width: 24%
       position: relative
+      &.has-error
+        input
+          border-color: $colorRed
       label
         position: absolute
         font-size: 12px
@@ -35,7 +38,6 @@
           top: -6px
           transform: rotate(-45deg)
           background: #fff
-
       input
         padding: 15px 25px
         border-top: 2px solid transparent
@@ -46,6 +48,7 @@
         border: none
         border-bottom: 2px solid #a5a5a5
         transition: all 0.25s ease-in-out
+        width: 100%
         &::placeholder
           color: #a5a5a5
           opacity: 1
@@ -61,7 +64,7 @@
         align-items: center
         justify-content: center
         flex: 0 1 254px
-        min-width: 249px
+        // min-width: 249px
         width: 100%
         border: 2px solid $colorRed
         background-color: $colorGray
@@ -75,3 +78,48 @@
         cursor: pointer
         &:hover
           background-color: $colorRed
+
++r($desktop)
+  .consultation
+    padding: 100px 0
+    h2
+      margin-bottom: 30px
+    &__grid
+      flex-wrap: wrap
+      .input-container
+        padding-top: 50px
+        width: 48%
+        input
+          padding: 15px 20px
+          font-size: 14px
+        .btn
+          font-size: 16px
+          padding: 13px 16px
+        label
+          min-width: 150px
+          left: 0
+
++r($tablet)
+  .consultation
+    padding: 40px 0
+    outline: 1px solid red
+    h2
+      font-size: 32px
+      margin-bottom: 10px
+    &__grid
+      flex-wrap: wrap
+      .input-container
+        padding-top: 25px
+        width: 100%
+        input
+          padding: 10px 15px
+          font-size: 14px
+        label
+          top: 97%
+        .btn
+          font-size: 16px
+          padding: 13px 16px
+          margin-top: 20px
+        label
+          min-width: 150px
+          left: 0

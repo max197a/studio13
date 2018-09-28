@@ -18,7 +18,7 @@ $(document).ready(function() {
     initSliders();
     // initScrollMonitor();
     initMasks();
-    initSelectric();
+    // initSelectric();
     initValidations();
 
     // initAos();
@@ -196,16 +196,12 @@ $(document).ready(function() {
       setTimeout(function() {
         $preloader.addClass("is-loaded");
 
-        setTimeout(function() {
-          // $preloader.remove();
-          $("body").css("overflow", "visible");
-        }, 1000);
+        // $("body").css("overflow", "hidden");
+        $("html").css("overflow", "auto");
 
         // new WOW().init();
-        AOS.init({
-          // delay: 500
-        });
-      }, 1500);
+        AOS.init({});
+      }, 1000);
     });
   })();
 
@@ -310,36 +306,36 @@ $(document).ready(function() {
     });
   }
 
-  // selectric
-  function initSelectric() {
-    $("select").selectric({
-      maxHeight: 300,
-      arrowButtonMarkup:
-        '<b class="button"><svg class="ico ico-select-down"><use xlink:href="img/sprite.svg#ico-select-down"></use></svg></b>',
+  // // selectric
+  // function initSelectric() {
+  //   $("select").selectric({
+  //     maxHeight: 300,
+  //     arrowButtonMarkup:
+  //       '<b class="button"><svg class="ico ico-select-down"><use xlink:href="img/sprite.svg#ico-select-down"></use></svg></b>',
 
-      onInit: function(element, data) {
-        var $elm = $(element),
-          $wrapper = $elm.closest("." + data.classes.wrapper);
+  //     onInit: function(element, data) {
+  //       var $elm = $(element),
+  //         $wrapper = $elm.closest("." + data.classes.wrapper);
 
-        $wrapper.find(".label").html($elm.attr("placeholder"));
-      },
-      onBeforeOpen: function(element, data) {
-        var $elm = $(element),
-          $wrapper = $elm.closest("." + data.classes.wrapper);
+  //       $wrapper.find(".label").html($elm.attr("placeholder"));
+  //     },
+  //     onBeforeOpen: function(element, data) {
+  //       var $elm = $(element),
+  //         $wrapper = $elm.closest("." + data.classes.wrapper);
 
-        $wrapper
-          .find(".label")
-          .data("value", $wrapper.find(".label").html())
-          .html($elm.attr("placeholder"));
-      },
-      onBeforeClose: function(element, data) {
-        var $elm = $(element),
-          $wrapper = $elm.closest("." + data.classes.wrapper);
+  //       $wrapper
+  //         .find(".label")
+  //         .data("value", $wrapper.find(".label").html())
+  //         .html($elm.attr("placeholder"));
+  //     },
+  //     onBeforeClose: function(element, data) {
+  //       var $elm = $(element),
+  //         $wrapper = $elm.closest("." + data.classes.wrapper);
 
-        $wrapper.find(".label").html($wrapper.find(".label").data("value"));
-      }
-    });
-  }
+  //       $wrapper.find(".label").html($wrapper.find(".label").data("value"));
+  //     }
+  //   });
+  // }
 
   ////////////
   // SCROLLMONITOR - WOW LIKE

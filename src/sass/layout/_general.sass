@@ -25,6 +25,8 @@ body, html
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   // overflow: hidden
+html
+  overflow: hidden
 
 .page
   display: flex
@@ -49,7 +51,7 @@ body, html
     padding-left: 0
     padding-right: 0
 
-+r($mobile)
++r($tablet)
   .container
     padding-left: 20px
     padding-right: 20px
@@ -72,6 +74,12 @@ p.sub-title
   line-height: 1.2
   padding-top: 12px
   margin: 0
+
++r($tablet)
+  h2
+    font-size: 32px
+  p.sub-title
+    font-size: 18px
 
 // REMOVE FOR PRODUCTION !
 .dev-bp-debug
