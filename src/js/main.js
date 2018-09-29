@@ -14,7 +14,7 @@ $(document).ready(function() {
     // updateHeaderActiveClass();
     initHeaderScroll();
 
-    // initPopups();
+    initPopups();
     initSliders();
     // initScrollMonitor();
     initMasks();
@@ -47,11 +47,6 @@ $(document).ready(function() {
   //////////
   // COMMON
   //////////
-  // function initAos() {
-  //   AOS.init({
-  //     disable: "tablet"
-  //   });
-  // }
 
   //////////
   // SLIDERS
@@ -199,10 +194,9 @@ $(document).ready(function() {
         $preloader.addClass("is-loaded");
 
         // $("body").css("overflow", "hidden");
-        $("html").css("overflow", "auto");
+        $("html").addClass("is-loaded");
 
-        // new WOW().init();
-        // AOS.init();
+        AOS.init();
       }, 1000);
     });
   })();
@@ -234,50 +228,19 @@ $(document).ready(function() {
   // // MODALS
   // //////////
 
-  // function initPopups(){
-  //   // Magnific Popup
-  //   var startWindowScroll = 0;
-  //   $('[js-popup]').magnificPopup({
-  //     type: 'inline',
-  //     fixedContentPos: true,
-  //     fixedBgPos: true,
-  //     overflowY: 'auto',
-  //     closeBtnInside: true,
-  //     preloader: false,
-  //     midClick: true,
-  //     removalDelay: 300,
-  //     mainClass: 'popup-buble',
-  //     callbacks: {
-  //       beforeOpen: function() {
-  //         startWindowScroll = _window.scrollTop();
-  //         // $('html').addClass('mfp-helper');
-  //       },
-  //       close: function() {
-  //         // $('html').removeClass('mfp-helper');
-  //         _window.scrollTop(startWindowScroll);
-  //       }
-  //     }
-  //   });
-
-  //   $('[js-popup-gallery]').magnificPopup({
-  // 		delegate: 'a',
-  // 		type: 'image',
-  // 		tLoading: 'Загрузка #%curr%...',
-  // 		mainClass: 'popup-buble',
-  // 		gallery: {
-  // 			enabled: true,
-  // 			navigateByImgClick: true,
-  // 			preload: [0,1]
-  // 		},
-  // 		image: {
-  // 			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-  // 		}
-  // 	});
-  // }
-
-  // function closeMfp(){
-  //   $.magnificPopup.close();
-  // }
+  function initPopups() {
+    // Magnific Popup
+    var startWindowScroll = 0;
+    $("[js-popup]").magnificPopup({
+      removalDelay: 500, //delay removal by X to allow out-animation
+      callbacks: {
+        beforeOpen: function() {
+          this.st.mainClass = this.st.el.attr("data-effect");
+        }
+      },
+      midClick: true
+    });
+  }
 
   ////////////
   // UI
@@ -455,82 +418,6 @@ $(document).ready(function() {
       }
     });
   }
-
-  // //////////
-  // // BARBA PJAX
-  // //////////
-  // var easingSwing = [.02, .01, .47, 1]; // default jQuery easing for anime.js
-
-  // Barba.Pjax.Dom.containerClass = "page";
-
-  // var FadeTransition = Barba.BaseTransition.extend({
-  //   start: function() {
-  //     Promise
-  //       .all([this.newContainerLoading, this.fadeOut()])
-  //       .then(this.fadeIn.bind(this));
-  //   },
-
-  //   fadeOut: function() {
-  //     var deferred = Barba.Utils.deferred();
-
-  //     anime({
-  //       targets: this.oldContainer,
-  //       opacity : .5,
-  //       easing: easingSwing, // swing
-  //       duration: 300,
-  //       complete: function(anim){
-  //         deferred.resolve();
-  //       }
-  //     })
-
-  //     return deferred.promise
-  //   },
-
-  //   fadeIn: function() {
-  //     var _this = this;
-  //     var $el = $(this.newContainer);
-
-  //     $(this.oldContainer).hide();
-
-  //     $el.css({
-  //       visibility : 'visible',
-  //       opacity : .5
-  //     });
-
-  //     anime({
-  //       targets: "html, body",
-  //       scrollTop: 1,
-  //       easing: easingSwing, // swing
-  //       duration: 150
-  //     });
-
-  //     anime({
-  //       targets: this.newContainer,
-  //       opacity: 1,
-  //       easing: easingSwing, // swing
-  //       duration: 300,
-  //       complete: function(anim) {
-  //         triggerBody()
-  //         _this.done();
-  //       }
-  //     });
-  //   }
-  // });
-
-  // // set barba transition
-  // Barba.Pjax.getTransition = function() {
-  //   return FadeTransition;
-  // };
-
-  // Barba.Prefetch.init();
-  // Barba.Pjax.start();
-
-  // Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
-
-  //   pageReady();
-  //   closeMobileMenu();
-
-  // });
 
   // some plugins get bindings onNewPage only that way
   function triggerBody() {
