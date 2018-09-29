@@ -46,7 +46,7 @@
       content: ''
       height: 100%
       width: 9000px
-      left: 100%
+      left: 99%
       top: 0
       background: $colorRed
       background-image: url(../img/lines.png)
@@ -98,3 +98,90 @@
     left: -98px
     top: 445px
     position: absolute
+
++r($desktop1168)
+  .firstscreen
+    padding-bottom: 180px
+    margin-bottom: 150px
+    .container
+      padding-top: 60px
+    &__title
+      font-size: 70px
+      max-width: 500px
+    &__sub-title
+      font-size: 28px
+    &__block
+      margin-top: -100px
+      margin-right: -40px
+      min-height: 550px
+      img
+        &:nth-child(1)
+          top: 150px
+          left: -200px
+          width: 120%
+        &:nth-child(2)
+          top: 30px
+          left: 50px
+          width: 100%
+        &:nth-child(3)
+          left: 100px
+          bottom: -200px
+          width: 70%
+      &:after
+        display: none
+    &__convert
+      top: 290px
+      left: -170px
+
++r($desktop)
+  .firstscreen
+    margin-bottom: 80px
+    &__block
+      img
+        &:nth-child(1)
+          top: 270px
+          left: -140px
+        &:nth-child(2)
+          left: 50px
+          top: 170px
+        &:nth-child(3)
+          bottom: -160px
+
++r($tablet)
+  .firstscreen
+    padding-top: 90px
+    .container
+      padding-top: 45px
+    &__title
+      font-size: 36px
+      padding-left: 15px
+      max-width: 235px
+      &:after
+        left: 0
+    &__sub-title
+      padding-left: 0
+      font-size: 20px
+      padding-left: 15px
+    &__block
+      // display: none
+      background: none
+      img
+        &:nth-child(1)
+          width: 250px
+          height: auto
+          top: 280px
+          left: -170px
+        &:nth-child(2)
+          display: none
+        &:nth-child(3)
+          display: none
+    &__lamp
+      width: 260px
+      top: -30px
+      right: -40px
+    &__convert
+      width: 200px
+      max-width: 200px
+      height: auto
+      left: -50px
+      top: 250px

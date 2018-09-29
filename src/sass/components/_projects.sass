@@ -94,16 +94,17 @@
     width: 100%
     .item
       width: 100%
-      min-height: 354px
+      min-height: 284px
       position: relative
+      overflow: hidden
       img
-        min-width: 730px
+        min-width: 500px
         width: 100%
         height: auto
         position: absolute
-        left: 0
+        left: 50%
         top: 50%
-        transform: translateY(-50%)
+        transform: translate(-50%, -50%)
     .slick-list
       position: relative
       z-index: 12
@@ -160,3 +161,73 @@
           padding: 20px
           border-color: $colorRed
           z-index: 3
+
+
++r($desktop1168)
+  .projects
+    &__top
+      padding-left: 0
+      justify-content: center
+      margin-bottom: 20px
+      &--reverse
+        .projects__carousel
+          margin-right: 0
+          margin-bottom: 0px
+    &__info
+      padding: 80px 25px 60px
+      margin-right: 0
+      margin-left: -40px
+      margin-top: -20px
+      &--editable
+        padding: 60px 25px
+    &__carousel
+      width: 55%
+      margin-top: 50px
+      margin-bottom: 20px
+      .item
+        img
+          // height: 100%
+          width: auto
+      &--editable
+        margin-bottom: 0
+
++r($tablet)
+  .projects
+    &__top
+      flex-direction: column-reverse
+      align-items: center
+      justify-content: center
+      &--reverse
+        .projects__info
+          margin-left: auto
+          margin-right: 0
+    &__info
+      padding: 25px 15px
+      margin: 0
+      margin-top: 20px
+      min-width: 280px
+      margin-right: auto
+      h2
+        font-size: 26px
+      &:after
+        display: none
+      p
+        font-size: 13px
+    &__carousel
+      margin-top: 20px
+      width: 100%
+      .item
+        min-height: 180px
+        img
+          height: 100%
+          width: auto
+          min-width: 0
+      .slick-dots
+        display: none
+        &:before
+          display: none
+    &__grid
+      margin: 0
+      width: 100%
+    &__item
+      margin: 0 5px

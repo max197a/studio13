@@ -48,7 +48,9 @@ $(document).ready(function() {
   // COMMON
   //////////
   // function initAos() {
-  //   AOS.init();
+  //   AOS.init({
+  //     disable: "tablet"
+  //   });
   // }
 
   //////////
@@ -200,7 +202,7 @@ $(document).ready(function() {
         $("html").css("overflow", "auto");
 
         // new WOW().init();
-        AOS.init({});
+        // AOS.init();
       }, 1000);
     });
   })();

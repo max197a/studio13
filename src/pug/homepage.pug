@@ -44,7 +44,7 @@ block content
     .container.container--big
       .container
         .projects__top
-          .projects__carousel(data-aos="fade-up")
+          .projects__carousel.projects__carousel--editable(data-aos="fade-up")
             .p-carousel(js-slick-1)
               .item
                 img(src="img/project-b-1.jpg", alt="")
@@ -56,7 +56,7 @@ block content
                 img(src="img/project-3.jpg", alt="")
               .item
                 img(src="img/project-4.jpg", alt="")
-          .projects__info(data-aos="fade-up" data-aos-delay="300")
+          .projects__info.projects__info--editable(data-aos="fade-up" data-aos-delay="300")
             h2 Брендинг
             p.sub-title Логотип, фирменный стиль, брендбук. 
               br 
@@ -119,7 +119,7 @@ block content
           .projects__carousel(data-aos="fade-up" data-aos-delay="300")
             .p-carousel(js-slick-3)
               .item
-                img(src="img/project-9-1.jpg", alt="")
+                img(src="img/project-b-9.jpg", alt="")
               .item
                 img(src="img/project-9.jpg", alt="")
               .item
@@ -226,7 +226,7 @@ block content
 
   // SECTION :: CONSULTATION
   section.consultation
-    .container(data-aos="fade-up")
+    .container.aos-offset(data-aos="fade-up")
       h2 Закажите консультацию
       form.js-registration-form(action="#")
         .consultation__grid
