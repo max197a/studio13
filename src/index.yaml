@@ -1,7 +1,5 @@
-ProjectTitle: Project-name
+ProjectTitle: Studio13
 
 PageList:
 - file: homepage.html
-  ready: 20
-- file: styleguide.html
-  ready: 100
+  ready: 80
