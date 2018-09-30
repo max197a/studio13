@@ -293,7 +293,7 @@ $(document).ready(function() {
       });
       setTimeout(function() {
         $.magnificPopup.close();
-      }, 3000);
+      }, 50000);
     };
 
     ////////
