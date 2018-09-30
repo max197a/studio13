@@ -228,7 +228,7 @@ block content
   section.consultation
     .container.aos-offset(data-aos="fade-up")
       h2 Закажите консультацию
-      form.js-registration-form(action="#")
+      form.js-registration-form(action="send.php" method="post")
         .consultation__grid
           .input-container
             input(type="text" name="name" placeholder="Ваше имя")
@@ -238,4 +238,5 @@ block content
             input(type="text" name="theme" placeholder="Тема консультации")
           .input-container
             input.btn(type="submit" value="Заказать звонок" )
+            input(type="hidden" name="whatForm" value="Заказать консультацию")
   // SECTION :: CONSULTATION

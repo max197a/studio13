@@ -16,7 +16,6 @@ $(document).ready(function() {
 
     initPopups();
     initSliders();
-    // initScrollMonitor();
     initMasks();
     // initSelectric();
     initValidations();
@@ -237,6 +236,17 @@ $(document).ready(function() {
         beforeOpen: function() {
           this.st.mainClass = this.st.el.attr("data-effect");
         }
+        // parseAjax: function(mfpResponse) {
+        //   // mfpResponse.data is a "data" object from ajax "success" callback
+        //   // for simple HTML file, it will be just String
+        //   // You may modify it to change contents of the popup
+        //   // For example, to show just #some-element:
+        //   mfpResponse.data = $(mfpResponse.data).find("#thankpopup");
+
+        //   // mfpResponse.data must be a String or a DOM (jQuery) element
+
+        //   console.log("Ajax content loaded:", mfpResponse);
+        // }
       },
       midClick: true
     });
@@ -302,39 +312,6 @@ $(document).ready(function() {
   //   });
   // }
 
-  ////////////
-  // SCROLLMONITOR - WOW LIKE
-  ////////////
-  // function initScrollMonitor(){
-  //   $('.wow').each(function(i, el){
-
-  //     var elWatcher = scrollMonitor.create( $(el) );
-
-  //     var delay;
-  //     if ( $(window).width() < 768 ){
-  //       delay = 0
-  //     } else {
-  //       delay = $(el).data('animation-delay');
-  //     }
-
-  //     var animationClass = $(el).data('animation-class') || "wowFadeUp"
-
-  //     var animationName = $(el).data('animation-name') || "wowFade"
-
-  //     elWatcher.enterViewport(throttle(function() {
-  //       $(el).addClass(animationClass);
-  //       $(el).css({
-  //         'animation-name': animationName,
-  //         'animation-delay': delay,
-  //         'visibility': 'visible'
-  //       });
-  //     }, 100, {
-  //       'leading': true
-  //     }));
-  //   });
-
-  // }
-
   ////////////////
   // FORM VALIDATIONS
   ////////////////
@@ -359,37 +336,32 @@ $(document).ready(function() {
     };
     var validateSubmitHandler = function(form) {
       $(form).addClass("loading");
+
       $.ajax({
         type: "POST",
         url: $(form).attr("action"),
         data: $(form).serialize(),
-        success: function(response) {
+        success: function(data) {
           $(form).removeClass("loading");
-          var data = $.parseJSON(response);
-          if (data.status == "success") {
-            // do something I can't test
-          } else {
-            $(form)
-              .find("[data-error]")
-              .html(data.message)
-              .show();
-          }
+          $.magnificPopup.open({
+            items: {
+              src: "#thankpopup",
+              type: "inline"
+            }
+          });
+        },
+        error: function(data) {
+          $.magnificPopup.open({
+            items: {
+              src: "#errorpopup",
+              type: "inline"
+            }
+          });
         }
       });
-    };
-
-    var validatePhone = {
-      required: true,
-      normalizer: function(value) {
-        var PHONE_MASK = "+38 (XXX) XXX-XXXX";
-        if (!value || value === PHONE_MASK) {
-          return value;
-        } else {
-          return value.replace(/[^\d]/g, "");
-        }
-      },
-      minlength: 11,
-      digits: true
+      setTimeout(function() {
+        $.magnificPopup.close();
+      }, 3000);
     };
 
     ////////
@@ -406,15 +378,25 @@ $(document).ready(function() {
       rules: {
         name: "required",
         phone: "required"
-        // phone: validatePhone
       },
       messages: {
         name: "Заполните это поле",
         phone: "Заполните это поле"
-        // phone: {
-        //     required: "Заполните это поле",
-        //     minlength: "Введите корректный телефон"
-        // }
+      }
+    });
+
+    $(".js-registration-form2").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        name: "required",
+        phone: "required"
+      },
+      messages: {
+        name: "Заполните это поле",
+        phone: "Заполните это поле"
       }
     });
   }
