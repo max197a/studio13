@@ -3,10 +3,9 @@
   "description": "",
   "main": "index.js",
   "authors": [
-    "Sergey Khmelevskoy <sergey@khmelevskoy.co>"
+    "Max Shkorupa <equiv505@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/dpmango/gulp-starter-pack",
   "ignore": [
     "**/.*",
     "node_modules",

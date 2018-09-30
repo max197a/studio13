@@ -17,13 +17,10 @@ $(document).ready(function() {
     initPopups();
     initSliders();
     initMasks();
-    // initSelectric();
     initValidations();
 
-    // initAos();
-
     // development helper
-    _window.on("resize", debounce(setBreakpoint, 200));
+    // _window.on("resize", debounce(setBreakpoint, 200));
 
     // AVAILABLE in _components folder
     // copy paste in main.js and initialize here
@@ -200,29 +197,6 @@ $(document).ready(function() {
     });
   })();
 
-  // // HAMBURGER TOGGLER
-  // _document.on('click', '[js-hamburger]', function(){
-  //   $(this).toggleClass('is-active');
-  //   $('.mobile-navi').toggleClass('is-active');
-  // });
-
-  // function closeMobileMenu(){
-  //   $('[js-hamburger]').removeClass('is-active');
-  //   $('.mobile-navi').removeClass('is-active');
-  // }
-
-  // // SET ACTIVE CLASS IN HEADER
-  // // * could be removed in production and server side rendering when header is inside barba-container
-  // function updateHeaderActiveClass(){
-  //   $('.header__menu li').each(function(i,val){
-  //     if ( $(val).find('a').attr('href') == window.location.pathname.split('/').pop() ){
-  //       $(val).addClass('is-active');
-  //     } else {
-  //       $(val).removeClass('is-active')
-  //     }
-  //   });
-  // }
-
   // //////////
   // // MODALS
   // //////////
@@ -236,17 +210,6 @@ $(document).ready(function() {
         beforeOpen: function() {
           this.st.mainClass = this.st.el.attr("data-effect");
         }
-        // parseAjax: function(mfpResponse) {
-        //   // mfpResponse.data is a "data" object from ajax "success" callback
-        //   // for simple HTML file, it will be just String
-        //   // You may modify it to change contents of the popup
-        //   // For example, to show just #some-element:
-        //   mfpResponse.data = $(mfpResponse.data).find("#thankpopup");
-
-        //   // mfpResponse.data must be a String or a DOM (jQuery) element
-
-        //   console.log("Ajax content loaded:", mfpResponse);
-        // }
       },
       midClick: true
     });
@@ -280,37 +243,6 @@ $(document).ready(function() {
       placeholder: "Ваш телефон"
     });
   }
-
-  // // selectric
-  // function initSelectric() {
-  //   $("select").selectric({
-  //     maxHeight: 300,
-  //     arrowButtonMarkup:
-  //       '<b class="button"><svg class="ico ico-select-down"><use xlink:href="img/sprite.svg#ico-select-down"></use></svg></b>',
-
-  //     onInit: function(element, data) {
-  //       var $elm = $(element),
-  //         $wrapper = $elm.closest("." + data.classes.wrapper);
-
-  //       $wrapper.find(".label").html($elm.attr("placeholder"));
-  //     },
-  //     onBeforeOpen: function(element, data) {
-  //       var $elm = $(element),
-  //         $wrapper = $elm.closest("." + data.classes.wrapper);
-
-  //       $wrapper
-  //         .find(".label")
-  //         .data("value", $wrapper.find(".label").html())
-  //         .html($elm.attr("placeholder"));
-  //     },
-  //     onBeforeClose: function(element, data) {
-  //       var $elm = $(element),
-  //         $wrapper = $elm.closest("." + data.classes.wrapper);
-
-  //       $wrapper.find(".label").html($wrapper.find(".label").data("value"));
-  //     }
-  //   });
-  // }
 
   ////////////////
   // FORM VALIDATIONS
