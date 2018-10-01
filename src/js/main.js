@@ -238,7 +238,7 @@ $(document).ready(function() {
   // Masked input
   function initMasks() {
     $("[js-dateMask]").mask("99.99.99", { placeholder: "ДД.ММ.ГГ" });
-    $("input[type='tel']").mask("+38 (000) 000-0000", {
+    $("input[type='number']").mask("000000000000", {
       // placeholder: "+38 (___) ___-____"
       placeholder: "Ваш телефон"
     });
@@ -309,7 +309,11 @@ $(document).ready(function() {
       submitHandler: validateSubmitHandler,
       rules: {
         name: "required",
-        phone: "required"
+        phone: {
+          required: true,
+          minlength: 9,
+          maxlength: 13
+        }
       },
       messages: {
         name: "Заполните это поле",
@@ -324,7 +328,11 @@ $(document).ready(function() {
       submitHandler: validateSubmitHandler,
       rules: {
         name: "required",
-        phone: "required"
+        phone: {
+          required: true,
+          minlength: 9,
+          maxlength: 13
+        }
       },
       messages: {
         name: "Заполните это поле",
